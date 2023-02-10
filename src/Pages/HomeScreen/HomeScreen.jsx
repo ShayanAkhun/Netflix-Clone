@@ -7,7 +7,7 @@ export function HomeScreen() {
       {/* Navbar */}
       <Navbar />
 
-      {/* Banner */}
+      {/* Banner will make this */}
 
       {/* Rows */}
     </div>
