@@ -1,3 +1,4 @@
+import { Banner } from "../../Components/Banner/Banner";
 import { Navbar } from "../../Components/Navbar/Navbar";
 import "./HomeScreen.css";
 
@@ -7,7 +8,8 @@ export function HomeScreen() {
       {/* Navbar */}
       <Navbar />
 
-      {/* Banner will make this */}
+      {/* Banner*/}
+      <Banner />
 
       {/* Rows */}
     </div>
