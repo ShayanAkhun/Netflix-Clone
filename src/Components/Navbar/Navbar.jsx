@@ -1,5 +1,5 @@
 import React from "react";
-import "../Navbar/Navbar.css";
+import "./Navbar.css";
 import LogoSvg from "../../assets/logo/Netflix-Logo.wine .svg";
 
 export function Navbar() {

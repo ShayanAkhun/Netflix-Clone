@@ -1,6 +1,6 @@
 import axios from "../Api/axios";
 import React from "react";
-import "../Banner/banner.css";
+import "./banner.css";
 import requests from "../Api/tmdbAPIkey";
 
 export function Banner() {
