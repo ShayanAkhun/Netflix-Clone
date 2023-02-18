@@ -2,6 +2,7 @@ import React from "react";
 import "./loginScreen.css";
 
 function LoginScreen() {
+  const [singIn, setSignIn] = React.useState(false);
   return (
     <div className="loginScreen">
       <div className="loginScreen__background">
