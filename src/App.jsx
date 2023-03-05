@@ -1,14 +1,13 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
+import { useState, useEffect } from "react";
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
 import { HomeScreen } from "./Sceens/HomeScreen/HomeScreen";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import LoginScreen from "./Sceens/LoginScreen/LoginScreen";
+import { auth } from "./firebase";
 
-// const app = initializeApp(firebaseConfig);
-// const analytics = getAnalytics(app);
+// useEffect(()=>{
+//     auth.onAuthStateChanged
+// },[])
 function App() {
   const user = null;
 
