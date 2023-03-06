@@ -5,11 +5,20 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import LoginScreen from "./Sceens/LoginScreen/LoginScreen";
 import { auth } from "./firebase";
 
-// useEffect(()=>{
-//     auth.onAuthStateChanged
-// },[])
 function App() {
   const user = null;
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((userAuth) => {
+      if (userAuth) {
+        // Logged In
+
+        console.log(userAuth);
+      } else {
+        // logged Out
+      }
+    });
+    return unsubscribe;
+  }, []);
 
   return (
     <div>
