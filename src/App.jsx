@@ -1,20 +1,27 @@
 import { useState, useEffect } from "react";
-// Import the functions you need from the SDKs you need
 import { HomeScreen } from "./Sceens/HomeScreen/HomeScreen";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import LoginScreen from "./Sceens/LoginScreen/LoginScreen";
 import { auth } from "./firebase";
+import { useDispatch, useSelector } from "react-redux";
+import { login, logout } from "./Redux/Features/userSlice";
 
 function App() {
-  const user = null;
+  const user = useSelector((state) => state.userSlice.user);
+  // const user = useSelector(selectUser);
+  const dispatch = useDispatch();
+
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((userAuth) => {
       if (userAuth) {
-        // Logged In
-
-        console.log(userAuth);
+        dispatch(
+          login({
+            uid: userAuth.uid,
+            email: userAuth.email,
+          })
+        );
       } else {
-        // logged Out
+        dispatch(logout);
       }
     });
     return unsubscribe;
