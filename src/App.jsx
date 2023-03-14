@@ -9,7 +9,6 @@ import ProfileScreen from "./Sceens/ProfileScreen/ProfileScreen";
 
 function App() {
   const user = useSelector((state) => state.userSlice.user);
-  // const user = useSelector(selectUser);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -22,11 +21,11 @@ function App() {
           })
         );
       } else {
-        dispatch(logout);
+        dispatch(logout());
       }
     });
     return unsubscribe;
-  }, []);
+  }, [dispatch]);
 
   return (
     <div>
@@ -36,7 +35,7 @@ function App() {
         <Router>
           <Routes>
             <Route path="/" element={<HomeScreen />} />
-            <Route path="/" element={<ProfileScreen />} />
+            <Route path="/profile" element={<ProfileScreen />} />
           </Routes>
         </Router>
       )}
